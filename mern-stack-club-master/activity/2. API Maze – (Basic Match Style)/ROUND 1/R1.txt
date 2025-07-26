@@ -1,0 +1,21 @@
+API Maze – ROUND 1
+---------------------------------------
+
+
+Sl.No	 |     Endpoint 	          Match from Option Set Below
+---------------------------------------------------------------
+  1	   | POST /api/books	
+  2	   | GET /api/students	
+  3	   | DELETE /api/games/:id	
+  4	   | PUT /api/courses/:id	
+  5	   | GET /api/books/:id	
+
+Response Options to Match:
+--------------------------
+A. Creates a new book entry
+B. Returns all students
+C. Deletes the selected game
+D. Updates course details by ID
+E. Returns single book by ID
+
+Answer ?: ABCDE

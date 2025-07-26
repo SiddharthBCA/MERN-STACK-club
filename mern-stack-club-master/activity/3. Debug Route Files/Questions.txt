@@ -1,0 +1,76 @@
+Activity 3: Route Debug Race – Question Set
+--------------------------------------------------------------------------------
+
+1. Buggy GET Route
+------------------
+app.get("/api/students", (req, res) => {
+  const students = Student.find();
+  res.json(students);
+});
+
+Issue:
+------
+Student.find() is asynchronous, but there is no await.
+So, what gets returned in students? Actual data or a Promise?
+
+Task:
+----- 
+Fix the route to correctly handle the async call and send the proper response.
+
+--------------------------------------------------------------------------------
+2. Buggy DELETE Route
+---------------------
+app.delete("/api/books", async (req, res) => {
+  const id = req.params.id;
+  await Book.findByIdAndDelete(id);
+  res.send("Deleted");
+});
+
+Issue:
+------
+The route is missing :id, so req.params.id will be undefined.
+No res.status() is used.
+There’s no error handling if the book is not found.
+
+Task:
+-----
+Fix the route by adding the ID param and return a JSON response with appropriate status codes.
+
+--------------------------------------------------------------------------------
+3. Buggy POST Route
+-------------------
+
+app.post("/api/courses", async (req, res) => {
+  const course = new Course(req.body);
+  course.save();
+  res.status(201).json("Course added");
+});
+
+Issue:
+------
+await is missing for course.save().
+
+The response returns a plain string instead of the saved object.
+
+Task:
+-----
+Fix the route to await the save operation and return the saved course data as JSON.
+
+--------------------------------------------------------------------------------
+
+4. Bonus Middleware – Logger
+----------------------------
+
+app.use((req, res) => {
+  console.log(req.method + " " + req.url);
+});
+
+Issue:
+-----
+Missing next() → This middleware will block the request from reaching routes.
+
+Task:
+-----
+Fix the middleware to log request info and properly pass control using next().
+
+--------------------------------------------------------------------------------

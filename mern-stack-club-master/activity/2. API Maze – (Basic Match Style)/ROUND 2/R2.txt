@@ -1,0 +1,27 @@
+API Maze – ROUND 2 (Trick Match Style)
+----------------------------------------
+
+Sl.No	 |     Endpoint                  	Match from Option Set Below
+--------------------------------------------------------------------
+  1	   | POST /api/courses	
+  2	   | GET /api/games/:id	
+  3	   | PUT /api/students/:id	
+  4	   | DELETE /api/books	
+  5	   | GET /api/students?sort=desc	
+  6	   | PATCH /api/users/:id	
+  7	   | GET /api/users/:name	
+  8	   | DELETE /api/users/:id
+| 
+
+Response Options to Match:
+--------------------------
+A. Deletes all books
+B. Partially updates user info by ID
+C. Updates student data by ID
+D. Returns user data by name
+E. Returns all students in descending order
+F. Creates a new course entry
+G. Returns details of a single game
+H. Deletes user by ID
+
+

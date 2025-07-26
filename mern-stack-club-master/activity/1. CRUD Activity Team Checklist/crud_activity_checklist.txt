@@ -1,0 +1,36 @@
+CRUD Activity Checklist
+------------------------
+
+1. Project Setup
+----------------
+Create new folder and run `npm init -y`
+Install packages: express, mongoose, dotenv, nodemon
+Setup `.env` file and use it to connect MongoDB Atlas/local
+
+2. Schema Design (Pick your model)
+----------------------------------
+Book: { title, author, price, isbn }
+Game: { name, genre, rating, released }
+Course: { name, instructor, duration, fee }
+Create schema with mongoose.Schema()
+
+3. Build Routes
+---------------
+GET All
+GET One (by ID)
+POST (Create)
+PUT (Update)
+DELETE (Remove)
+
+4. Postman Test
+----------------
+Test all 4 routes in Postman
+Show status codes (200, 201, 400, etc.)
+Error handling for missing fields / wrong ID
+
+5. Bonus(Extra Points!)
+------------------------
+Used `.env` for DB
+Used MongoDB Atlas
+Good folder structure
+Used middleware (like logger)
